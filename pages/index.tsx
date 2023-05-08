@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { Grid, Stack, Text, Button, Link } from "@chakra-ui/react";
+import { Grid, Stack, Text, Button, Link, Box } from "@chakra-ui/react";
 
 import { Product } from "../products/types";
 import api from "../products/api";
@@ -39,27 +39,44 @@ const IndexRoute: React.FC<Props> = ({ products }) => {
 	}
 
 	return (
-		<Stack>
+		<Stack spacing={6}>
 			<Grid gridGap={6} templateColumns="repeat(auto-fill, minmax(240px, 1fr))">
 				{products.map((product) => (
-					<Stack backgroundColor="gray.100" key={product.id}>
-						<Text>{product.title}</Text>
-						<Text>{parseCurrency(product.price)}</Text>
-						<Button onClick={() => handleAddToCart(product)} colorScheme="blue">
+					<Stack
+						borderRadius="md"
+						padding={4}
+						spacing={3}
+						backgroundColor="gray.100"
+						key={product.id}
+					>
+						<Stack spacing={1}>
+							<Text>{product.title}</Text>
+							<Text color="purple.500" fontSize="sm" fontWeight="500">
+								{parseCurrency(product.price)}
+							</Text>
+						</Stack>
+						<Button
+							onClick={() => handleAddToCart(product)}
+							colorScheme="primary"
+						>
 							Add
 						</Button>
 					</Stack>
 				))}
 			</Grid>
 			{Boolean(cart.length) && (
-				<Button
-					as={Link}
-					href={`https://wa.me/549114156839?text=${encodeURIComponent(text)}`}
-					isExternal
-					colorScheme="whatsapp"
-				>
-					Complete Order ({cart.length} products)
-				</Button>
+				<Box padding={4} position="sticky" bottom={0} marginBottom={4}>
+					<Button
+						as={Link}
+						href={`https://wa.me/549114156839?text=${encodeURIComponent(text)}`}
+						isExternal
+						colorScheme="whatsapp"
+						size="sm"
+						width="100% "
+					>
+						Complete Order ({cart.length} products)
+					</Button>
+				</Box>
 			)}
 		</Stack>
 	);
