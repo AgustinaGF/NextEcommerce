@@ -90,6 +90,7 @@ const IndexRoute: React.FC<Props> = ({ products }) => {
 export const getStaticProps: GetStaticProps = async () => {
 	const products = await api.list();
 	return {
+		revalidate: 10,
 		props: {
 			products,
 		},
