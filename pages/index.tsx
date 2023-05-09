@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { Grid, Stack, Text, Button, Link, Box } from "@chakra-ui/react";
+import { Grid, Stack, Text, Button, Link, Box, Flex } from "@chakra-ui/react";
 
 import { Product } from "../products/types";
 import api from "../products/api";
@@ -65,18 +65,23 @@ const IndexRoute: React.FC<Props> = ({ products }) => {
 				))}
 			</Grid>
 			{Boolean(cart.length) && (
-				<Box padding={4} position="sticky" bottom={0} marginBottom={4}>
+				<Flex
+					alignItems="center"
+					justifyContent="center"
+					position="sticky"
+					bottom={4}
+				>
 					<Button
 						as={Link}
 						href={`https://wa.me/549114156839?text=${encodeURIComponent(text)}`}
 						isExternal
 						colorScheme="whatsapp"
-						size="sm"
-						width="100% "
+						width="fit-content"
+						padding={4}
 					>
 						Complete Order ({cart.length} products)
 					</Button>
-				</Box>
+				</Flex>
 			)}
 		</Stack>
 	);
