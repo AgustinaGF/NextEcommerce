@@ -24,7 +24,14 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 					borderRadius="sm"
 				>
 					<VStack>
-						<Image borderRadius={9999} src={"//placehold.it/128x128"}></Image>
+						<Image
+							borderRadius={9999}
+							width={128}
+							height={128}
+							src={
+								"https://img.freepik.com/vector-premium/gato-gafas-sol-corazon_24640-51806.jpg?w=740"
+							}
+						></Image>
 						<Heading>Ecommerce </Heading>
 					</VStack>
 					<Divider marginY={10} />
