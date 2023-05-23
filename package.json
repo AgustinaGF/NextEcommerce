@@ -26,7 +26,9 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
+    "cypress": "^7.0.1",
     "eslint": "8.40.0",
-    "eslint-config-next": "13.4.1"
+    "eslint-config-next": "13.4.1",
+    "eslint-plugin-cypress": "^2.13.3"
   }
 }
