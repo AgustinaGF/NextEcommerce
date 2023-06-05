@@ -1,0 +1,110 @@
+[
+    {
+        "id": "0001",
+        "type": "product",
+        "title": "Cinta Adhesiva Rosa",
+        "category": "Libreria",
+        "description": "Despachador De Cinta Adhesiva Rosa",
+        "image": "https://minisomx.vtexassets.com/arquivos/ids/237343-384-384?v=1770894548&width=384&height=384&aspect=t",
+        "price": 500
+    },
+    {
+        "id": "0002",
+        "type": "product",
+        "title": "Set Oficina",
+        "category": "Libreria",
+        "description": "Set Oficina Cute",
+        "image": "https://i.pinimg.com/originals/de/fa/8a/defa8a7d83d75a58104d04a5c4a11e7d.jpg",
+        "price": 1500
+    },
+    {
+        "id": "0003",
+        "type": "product",
+        "title": "Abrochadora",
+        "category": "Libreria",
+        "description": "Abrochadora Arcoiris",
+        "image": "https://minisomx.vtexassets.com/arquivos/ids/214375-384-384?v=637922938307970000&width=384&height=384&aspect=true",
+        "price": 1000
+    },
+    {
+        "id": "0004",
+        "type": "product",
+        "title": "Sacapuntas",
+        "category": "Libreria",
+        "description": "Sacapuntas Hello Kitty",
+        "image": "https://i.pinimg.com/originals/05/04/9e/05049e4a992b826c8659ee2ec3692082.jpg",
+        "price": 450
+    },
+    {
+        "id": "0005",
+        "type": "product",
+        "title": "Cintas Adhesivas",
+        "category": "Libreria",
+        "description": "Cintas adhesivas multicolor",
+        "image": "https://minisomx.vtexassets.com/arquivos/ids/250952-384-384?v=638119537989430000&width=384&height=384&aspect=true",
+        "price": 310
+    },
+    {
+        "id": "0006",
+        "type": "product",
+        "title": "Lapiz",
+        "category": "Libreria",
+        "description": "Lapiz con Formas",
+        "image": "https://i.pinimg.com/564x/b5/ad/d1/b5add1a11b3377f4e3c2111a28605d36.jpg",
+        "price": 50
+    },
+    {
+        "id": "0007",
+        "type": "product",
+        "title": "Posticks",
+        "category": "Libreria",
+        "description": "Set de Posticks Pinguinos ",
+        "image": "https://minisomx.vtexassets.com/arquivos/ids/259009-384-384?v=638143618811400000&width=384&height=384&aspect=t",
+        "price": 600
+    },
+    {
+        "id": "0008",
+        "type": "poduct",
+        "title": "Cuadernos",
+        "category": "Libreria",
+        "description": "Set Cuadernos Rosas",
+        "image": "https://i.pinimg.com/originals/fc/d5/26/fcd526bd901158b0a603698dbbe519b1.jpg",
+        "price": 5000
+    },
+    {
+        "id": "0009",
+        "type": "product",
+        "title": "Marcadores",
+        "category": "Libreria",
+        "description": "Set Marcadores Tono Pastel",
+        "image": "https://i.pinimg.com/564x/cf/50/5b/cf505b0cc77a4a9ef0d0b3bb2d20266e.jpg",
+        "price": 2000
+    },
+    {
+        "id": "0010",
+        "type": "product",
+        "title": "Sujetador de Hojas",
+        "category": "Libreria",
+        "description": "Set Sujeta Hojas",
+        "image": "https://i.pinimg.com/originals/2e/cd/9e/2ecd9e73c7eaf5e1799b71383d5ab7c9.jpg",
+        "price": 1000
+    },
+    {
+        "id": "0011",
+        "type": "product",
+        "title": "Lapiceras",
+        "category": "Libreria",
+        "description": "Lapiceras Colores",
+        "image": "https://i.pinimg.com/originals/97/74/52/977452588730578ccb73b92227f22989.jpg",
+        "price": 3000
+    },
+    {
+        "id": "0011",
+        "type": "product",
+        "title": "Agendas",
+        "category": "Libreria",
+        "description": "Agendas con Dibujos",
+        "image": "https://i.pinimg.com/originals/ed/43/b0/ed43b0d3c669b02e153780f959a0a878.jpg",
+        "price": 0
+    }
+]

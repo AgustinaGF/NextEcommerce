@@ -27,4 +27,7 @@ export default {
 				});
 			});
 	},
+	mock:{
+		list:(mock:string) :Promise<Product>=> import(`./moks/${mock}.json`)
+	}
 };
