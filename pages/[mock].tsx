@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 import { Product } from "../products/types";
 import api from "../products/api";
@@ -20,6 +20,7 @@ const IndexRoute: React.FC<Props> = ({ products }) => {
 
 export const getStaticProps: GetStaticProps <unknown, Params>= async ({params}) => {
 	const products = await api.mock.list(params.mock);
+console.log(products)
 	return {
 		revalidate: 10,
 		props: {
@@ -27,5 +28,11 @@ export const getStaticProps: GetStaticProps <unknown, Params>= async ({params}) 
 		},
 	};
 };
-
+export const getStaticPaths: GetStaticPaths = async()=>{
+	return{
+		paths:[],
+		///esto permite que no se ejecute en prod
+		fallback:process.env.NODE_ENV=== "production" ? false: "blocking"
+	}
+}
 export default IndexRoute;

@@ -1,10 +1,13 @@
+import mock from "../../products/mocks/default.json"
+
 describe("Products", () => {
 	it("should show all products", () => {
-		cy.visit("/");
-		cy.get('[data-test-id="product"]').should("have.length", 12);
+		cy.visit("/default");
+		cy.get('[data-test-id="product"]').should("have.length", mock.length);
 	});
 	it("displays a message when there are no products", () => {
-		cy.visit("/");
+		cy.visit("/empty");
 		cy.get('[data-test-id="product"]').should("have.length", 0);
+		
 	});
 });

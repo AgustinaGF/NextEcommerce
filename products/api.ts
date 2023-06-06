@@ -28,6 +28,6 @@ export default {
 			});
 	},
 	mock:{
-		list:(mock:string) :Promise<Product>=> import(`./moks/${mock}.json`)
+		list:(mock:string) :Promise<Product> => import(`./mocks/${mock}.json`).then((result)=>result.default),
 	}
 };

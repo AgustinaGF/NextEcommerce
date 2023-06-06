@@ -37,7 +37,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 	return (
 		<LayoutGroup>
 			<Stack spacing={6}>
-				<Grid
+				{Boolean(products.length)?(<Grid
 					gridGap={6}
 					templateColumns="repeat(auto-fill, minmax(240px, 1fr))"
 				>
@@ -74,7 +74,8 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 							</Button>
 						</Stack>
 					))}
-				</Grid>
+				</Grid>):(<Text color="green.500" margin="auto" fontSize="lg">No Products</Text>)}
+				
 				<AnimatePresence>
 					{Boolean(cart.length) && (
 						<Flex
