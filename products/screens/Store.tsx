@@ -1,10 +1,13 @@
 import { Grid, Stack, Text, Button, Link, Flex, Image } from "@chakra-ui/react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { parseCurrency } from "../../utils/currency";
+
 
 import { Product } from "../types";
 
 import { useEffect, useMemo, useState } from "react";
-import { parseCurrency } from "../../utils/currency";
+
+import ProductCard from "../components/ProductCard";
 
 interface Props {
 	products: Product[];
@@ -42,37 +45,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 					templateColumns="repeat(auto-fill, minmax(240px, 1fr))"
 				>
 					{products.map((product) => (
-						<Stack
-							data-test-id="product"
-							borderRadius="md"
-							padding={4}
-							spacing={3}
-							backgroundColor="gray.100"
-							key={product.id}
-						>
-							<Image
-								alt={product.title}
-								as={motion.img}
-								cursor="pointer"
-								layoutId={product.image}
-								src={product.image}
-								maxHeight={128}
-								objectFit="cover"
-								onClick={() => setSeletedImage(product.image)}
-							/>
-							<Stack spacing={1}>
-								<Text>{product.title}</Text>
-								<Text color="purple.500" fontSize="sm" fontWeight="500">
-									{parseCurrency(product.price)}
-								</Text>
-							</Stack>
-							<Button
-								onClick={() => handleAddToCart(product)}
-								colorScheme="primary"
-							>
-								Add
-							</Button>
-						</Stack>
+						<ProductCard product={product} key={product.id} onAdd={()=>handleAddToCart(product)} />
 					))}
 				</Grid>):(<Text color="green.500" margin="auto" fontSize="lg">No Products</Text>)}
 				
