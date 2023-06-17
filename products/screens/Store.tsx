@@ -71,7 +71,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 								width="fit-content"
 								padding={4}
 								leftIcon={
-									<Image src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" />
+									<Image src="https://icongr.am/fontawesome/whatsapp.svg?size=32&color=ffffff" alt="icon"/>
 								}
 							>
 								Complete Order ({cart.length} products)

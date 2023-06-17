@@ -1,5 +1,5 @@
 import * as React from "react"
-import {render, screen} from "@testing-library/react"
+import {fireEvent, render, screen} from "@testing-library/react"
 
 
 import ProductCard  from "../ProductCard"
@@ -25,4 +25,9 @@ expect(screen.getByText(priceRegex)).toBeInTheDocument()
 expect(screen.getByText("Add")).toBeInTheDocument()
 })
 
-// test("It should run onAdd when I click add", ()=>{})
+test("It should run onAdd when I click add", ()=>{
+    const onAdd = jest.fn()
+    render(<ProductCard product={product} onAdd={onAdd} selectImage={jest.fn()}/>);
+    fireEvent.click(screen.getByText('Add'));
+    expect(onAdd).toHaveBeenCalled();
+})
