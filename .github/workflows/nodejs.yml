@@ -2,13 +2,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main, test ]
+    branches: [main, test]
   pull_request:
-    branches: [ main, test ]
+    branches: [main, test]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,5 +22,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
-      - run: npm run dev && npx wait-on http://localhost:3000
+      - run: npm run dev && npx wait-on --timeout 60000 tcp:5173
       - run: npm run integration
