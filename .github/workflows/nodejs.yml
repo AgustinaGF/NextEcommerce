@@ -22,5 +22,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
-      - run: npm run dev && npx wait-on --timeout 60000 tcp:5173
+      - run: npm run dev && npx wait-on http://127.0.0.1:3000
       - run: npm run integration
