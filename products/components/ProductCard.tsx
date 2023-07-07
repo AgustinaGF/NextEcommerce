@@ -8,7 +8,7 @@ import { parseCurrency } from "../../utils/currency";
 interface Props{
 product:Product;
 onAdd:(product:Product)=> void;
-selectImage?:()=>void
+selectImage?:(image:String)=>void
 }
 
 const ProductCard:React.FC<Props> = ({product, onAdd, selectImage})=>{
@@ -28,7 +28,7 @@ const ProductCard:React.FC<Props> = ({product, onAdd, selectImage})=>{
             src={product.image}
             maxHeight={128}
             objectFit="cover"
-            onClick={() => selectImage()}
+            onClick={()=>selectImage(product.image)}
         />
         <Stack spacing={1}>
             <Text>{product.title}</Text>

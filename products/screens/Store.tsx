@@ -37,6 +37,10 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 		setCart((cart) => cart.concat(product));
 	}
 
+	function bigImage(image){
+		setSeletedImage(image)
+	}
+
 	return (
 		<LayoutGroup>
 			<Stack spacing={6}>
@@ -45,7 +49,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 					templateColumns="repeat(auto-fill, minmax(240px, 1fr))"
 				>
 					{products.map((product) => (
-						<ProductCard product={product} key={product.id} onAdd={()=>handleAddToCart(product)} />
+						<ProductCard product={product} key={product.id} onAdd={()=>handleAddToCart(product)} selectImage={()=>bigImage(product.image)} />
 					))}
 				</Grid>):(<Text color="green.500" margin="auto" fontSize="lg">No Products</Text>)}
 				
@@ -96,7 +100,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 						layoutId={seletedImage}
 						onClick={() => setSeletedImage(null)}
 					>
-						<Image key="image" src={seletedImage} width={384} height={384} />
+						<Image key="image" src={seletedImage} width={384} height={384} alt='image' />
 					</Flex>
 				)}
 			</AnimatePresence>
