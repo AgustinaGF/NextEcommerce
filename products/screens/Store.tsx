@@ -146,7 +146,8 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
                       alt="icon"
                     />
                   }>
-                  Show Order ({cart.length} products)
+                  Show Order (
+                  {cart.reduce((acc, item) => acc + item.quantity, 0)} products)
                 </Button>
               </Flex>
             )}
@@ -231,7 +232,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
                     alt="icon"
                   />
                 }>
-                Complete Order (${total})
+                Complete Order ({total})
               </Button>
             </DrawerFooter>
           </DrawerContent>
