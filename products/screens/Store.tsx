@@ -8,6 +8,7 @@ import { Product } from "../types";
 import { useEffect, useMemo, useState } from "react";
 
 import ProductCard from "../components/ProductCard";
+import { INFORMATION } from "../../app/constants";
 
 interface Props {
 	products: Product[];
@@ -67,7 +68,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
 						>
 							<Button
 								as={Link}
-								href={`https://wa.me/549114156839?text=${encodeURIComponent(
+								href={`https://wa.me/${INFORMATION.phone}?text=${encodeURIComponent(
 									text
 								)}`}
 								isExternal

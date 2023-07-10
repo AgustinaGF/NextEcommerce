@@ -1,12 +1,14 @@
 import axios from "axios";
 import Papa from "papaparse";
 import { Product } from "./types";
+import { INFORMATION } from "../app/constants";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	list: async (): Promise<Product[]> => {
 		return axios
 			.get(
-				`https://docs.google.com/spreadsheets/d/e/2PACX-1vT-zOoG-24hIgf7sAc-5XWSsztMVMBN23mar70bddptwNMQa1UEe5FnirsUyoHMXxl6nyWyAJy1WaCi/pub?output=csv`,
+				INFORMATION.sheet,
 				{ responseType: "blob" }
 			)
 			.then((response) => {
