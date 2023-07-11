@@ -13,13 +13,8 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
   HStack,
-  CloseButton,
+  Divider,
 } from "@chakra-ui/react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { parseCurrency } from "../../utils/currency";
@@ -30,7 +25,6 @@ import { useEffect, useMemo, useState } from "react";
 
 import ProductCard from "../components/ProductCard";
 import { INFORMATION } from "../../app/constants";
-import { parse } from "papaparse";
 
 interface Props {
   products: Product[];
@@ -59,9 +53,9 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
         .reduce(
           (message, product) =>
             message.concat(
-              `* ${product.title} - ${parseCurrency(
-                product.price * product.quantity
-              )}
+              `* ${product.title} ${
+                product.quantity > 1 ? `(x${product.quantity})` : ""
+              } - ${parseCurrency(product.price * product.quantity)}
             \n`
             ),
           ``
@@ -138,7 +132,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
                 <Button
                   onClick={() => toggleCart(true)}
                   colorScheme="whatsapp"
-                  width="fit-content"
+                  width={{ base: "100%", sm: "fit-content" }}
                   padding={4}
                   leftIcon={
                     <Image
@@ -181,11 +175,11 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
             <DrawerCloseButton />
             <DrawerHeader>Your Order</DrawerHeader>
             <DrawerBody>
-              <List spacing={4}>
+              <Stack spacing={4} divider={<Divider />}>
                 {cart.map((product) => (
-                  <ListItem key={product.id}>
-                    <Stack>
-                      <HStack justifyContent="space-between">
+                  <Stack direction="row" key={product.id}>
+                    <Stack width="100%">
+                      <Stack direction="row" justifyContent="space-between">
                         <Text fontWeight="500">
                           {product.title}
                           {product.quantity > 1
@@ -196,8 +190,8 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
                           {parseCurrency(product.price * product.quantity)}
                         </Text>
                         <HStack spacing={3}></HStack>
-                      </HStack>
-                      <HStack>
+                      </Stack>
+                      <Stack direction="row">
                         <Button
                           size="xs"
                           onClick={() => handleEditCart(product, "decrement")}>
@@ -209,11 +203,11 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
                           onClick={() => handleEditCart(product, "increment")}>
                           +
                         </Button>
-                      </HStack>
+                      </Stack>
                     </Stack>
-                  </ListItem>
+                  </Stack>
                 ))}
-              </List>
+              </Stack>
             </DrawerBody>
 
             <DrawerFooter>
