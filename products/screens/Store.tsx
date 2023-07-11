@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import ProductCard from "../components/ProductCard";
 import CartDrawer from "../components/CartDrawer";
+import { editCart } from "../selectors";
 
 interface Props {
   products: Product[];
@@ -22,30 +23,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
   }
 
   function handleEditCart(product: Product, action: "increment" | "decrement") {
-    setCart((cart) => {
-      const isInCart = cart.some((item) => item.id === product.id);
-
-      if (!isInCart) {
-        return cart.concat({
-          ...product,
-          quantity: 1,
-        });
-      }
-      return cart.reduce((acc, _product) => {
-        if (product.id != _product.id) {
-          return acc.concat(_product);
-        }
-
-        if (action === "decrement") {
-          if (_product.quantity === 1) {
-            return acc;
-          }
-          return acc.concat({ ..._product, quantity: _product.quantity - 1 });
-        } else if (action === "increment") {
-          return acc.concat({ ..._product, quantity: _product.quantity + 1 });
-        }
-      }, []);
-    });
+    setCart(editCart(product, action));
   }
 
   return (
