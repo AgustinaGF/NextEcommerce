@@ -13,7 +13,7 @@ interface Props {
 const ProductCard: React.FC<Props> = ({ product, onAdd, selectImage }) => {
   return (
     <Stack
-      data-test-id="product"
+      data-testid="product"
       borderRadius="md"
       padding={4}
       spacing={3}

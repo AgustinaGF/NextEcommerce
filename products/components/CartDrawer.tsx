@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
   Button,
   Divider,
@@ -76,7 +77,10 @@ const CartDrawer: React.FC<Props> = ({
               {Boolean(items.length) ? (
                 <Stack spacing={4} divider={<Divider />}>
                   {items.map((product) => (
-                    <Stack direction="row" key={product.id}>
+                    <Stack
+                      data-testid="cart-item"
+                      direction="row"
+                      key={product.id}>
                       <Stack width="100%">
                         <Stack direction="row" justifyContent="space-between">
                           <Text fontWeight="500">
@@ -93,13 +97,13 @@ const CartDrawer: React.FC<Props> = ({
                         <Stack direction="row">
                           <Button
                             size="xs"
-                            onClick={() => onDecrement(product)}>
-                            -
-                          </Button>
+                            onClick={() => onDecrement(product)}
+                            data-testid="decrement"></Button>
                           <Text>{product.quantity}</Text>
                           <Button
                             size="xs"
-                            onClick={() => onIncrement(product)}>
+                            onClick={() => onIncrement(product)}
+                            data-testid="increment">
                             +
                           </Button>
                         </Stack>
