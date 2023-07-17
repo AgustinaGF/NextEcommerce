@@ -98,7 +98,9 @@ const CartDrawer: React.FC<Props> = ({
                           <Button
                             size="xs"
                             onClick={() => onDecrement(product)}
-                            data-testid="decrement"></Button>
+                            data-testid="decrement">
+                            -
+                          </Button>
                           <Text>{product.quantity}</Text>
                           <Button
                             size="xs"
