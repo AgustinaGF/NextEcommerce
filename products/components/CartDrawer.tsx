@@ -71,7 +71,7 @@ const CartDrawer: React.FC<Props> = ({
         <Drawer placement="right" onClose={onClose} {...props}>
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerCloseButton aria-label="Close" />
+            <DrawerCloseButton />
             <DrawerHeader>Your Order</DrawerHeader>
             <DrawerBody data-testid="cart">
               {Boolean(items.length) ? (
