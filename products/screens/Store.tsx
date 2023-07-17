@@ -61,6 +61,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
                 bottom={4}
                 as={motion.div}>
                 <Button
+                  data-testid="show-cart"
                   onClick={() => toggleCart(true)}
                   colorScheme="whatsapp"
                   width={{ base: "100%", sm: "fit-content" }}

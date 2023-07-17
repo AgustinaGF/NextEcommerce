@@ -73,7 +73,7 @@ const CartDrawer: React.FC<Props> = ({
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>Your Order</DrawerHeader>
-            <DrawerBody>
+            <DrawerBody data-testid="cart">
               {Boolean(items.length) ? (
                 <Stack spacing={4} divider={<Divider />}>
                   {items.map((product) => (
@@ -121,6 +121,7 @@ const CartDrawer: React.FC<Props> = ({
             {Boolean(items.length) && (
               <DrawerFooter>
                 <Button
+                  data-testid="complete-order"
                   as={Link}
                   href={`https://wa.me/${
                     INFORMATION.phone
