@@ -31,7 +31,12 @@ const ProductCard: React.FC<Props> = ({ product, onAdd, selectImage }) => {
         onClick={() => selectImage(product.image)}
       />
       <Stack spacing={1}>
-        <Text>{product.title}</Text>
+        <Text fontSize="lg" fontWeight={500}>
+          {product.title}
+        </Text>
+        <Text color="gray.600" height={12}>
+          {product.description}
+        </Text>
         <Text color="purple.500" fontSize="sm" fontWeight="500">
           {parseCurrency(product.price)}
         </Text>

@@ -72,8 +72,13 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
                       alt="icon"
                     />
                   }>
-                  Show Order (
-                  {cart.reduce((acc, item) => acc + item.quantity, 0)} products)
+                  <Stack direction="row">
+                    <Text>Show Order</Text>
+                    <Text>
+                      {cart.reduce((acc, item) => acc + item.quantity, 0)}
+                      (products)
+                    </Text>
+                  </Stack>
                 </Button>
               </Flex>
             )}
