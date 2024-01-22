@@ -34,9 +34,10 @@ const ProductCard: React.FC<Props> = ({ product, onAdd, selectImage }) => {
         <Text fontSize="lg" fontWeight={500}>
           {product.title}
         </Text>
-        <Text color="gray.600" height={12}>
+        <Text color="gray.600" height={12} minHeight="50px">
           {product.description}
         </Text>
+        <Link minHeight="50px" href={`${product.url}`} isExternal>{product.url}</Link>
         <Text color="purple.500" fontSize="sm" fontWeight="500">
           {parseCurrency(product.price)}
         </Text>
