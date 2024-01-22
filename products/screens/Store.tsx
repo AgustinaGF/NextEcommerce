@@ -99,7 +99,7 @@ const StoreScreen: React.FC<Props> = ({ products }) => {
               width="100%"
               layoutId={seletedImage}
               onClick={() => setSeletedImage(null)}>
-              <Image src={seletedImage} width={384} height={384} alt="image" />
+              <Image src={seletedImage} height={384} alt="image" />
             </Flex>
           )}
         </AnimatePresence>
