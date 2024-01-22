@@ -19,7 +19,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 	return (
 		<>
 		<Head>
-			<title>Ecommerce</title>
+			<title>Agus&Ari Ecommerce</title>
 			<link rel="shortcut icon"  type="image/x-icon" href="/favicon.ico"/>
 			<meta content="initial-scale=1.0, width=device-width" name="viewport"></meta>
 			<meta name="author" content="AgustinaGF" />
